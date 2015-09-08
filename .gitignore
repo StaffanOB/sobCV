@@ -1,0 +1,7 @@
+**/*.aux
+**/*.swp
+**/*.log
+**/*.swp
+**/*.fdb_latexmk
+**/*.pdf
+**/*.gz
