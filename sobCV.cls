@@ -69,8 +69,8 @@
 
 
 
-\newcommand{\userquote}[1]{%
-   \quote{\Large\it\centering#1}
+\newcommand{\userquote}[2]{%
+   \quote{\Large\it\centering#1\\--#2}
 }
 
 \newcommand{\datedsection}[4]{%
