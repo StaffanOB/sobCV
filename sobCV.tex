@@ -4,10 +4,12 @@
 
 
 \begin{document}
+% =============================================================================
+% Personal information 
+% =============================================================================
+   \name{John}{Doe}
 
-   \name{Staffan}{Björnson}
-
-   \longcontact{Staffan Bjornson}
+   \longcontact{John Doe}
                {Fågelängsvägen 36}
                {179 75 Ska}
                {2015-09-09}
@@ -15,96 +17,137 @@
                {staffan@toor.se}
 
 
-   % A quote that defines you
-   \userquote{If you ever start taking things too seriously, just remember that we are talking monkeys on an organic spaceship flying through the universe.}{The quote Guy}
+% =============================================================================
+% A quote that defines you
+   \userquote{
+      If you ever start taking things too seriously, just remember that we are talking monkeys on an organic spaceship flying through the universe.
+   }
 
 
-   % Your job experience 
+% =============================================================================
+% Your job experience 
+% =============================================================================
    \section{Experience}
-   \experiencenode
+      \experiencenode
       % =======================================================================
-      {Job title 2}                    % Set your jobe title
-      {Company}                        % Company name
-      {2014 -- Now}                    % What year did you start and end
-      {sep to now}{                    % Specifye month
+      {Job title 1}                                      % Set your job title
+      {Brilliant Company Inc.}                           % Company name
+      {2014 -- Now}                                      % Between what years 
+      {sep to now}{                                      % Specify month
       % =======================================================================
-      % What whas the main tasks thith the job. 
-      % Use comma (,) to separate jthe tasks.
+      % What was the main tasks of the job. 
+      % Use comma (,) to separate the tasks.
       % =======================================================================
-         Automatic Operating System deployment,
-         Directory server and MIT Kerberos etc.,
-         Regression testing ,
-         Administration tool development (Bash, Python \& Java),
-         System documentation (End user guides and technical documentation for developers),
-         In charge of product build and release with in the development team
+         Being awesome,
+         Chilling,
+         The candy guy
       }{
       % =======================================================================
       % Description of your job 
       % =======================================================================
-      Planing and designing of test environment with new features and function. Automatic OS deployment, directory server, certificate system and HSM integration. System wide functional testing and regression testing of terminal management systems.
+      Doing things for the boss man. Real good.
    }
 
    \experiencenode
-      {Job title 2}
-      {Company}
-      {2013 -- 2014}
-      {aug to sep}
-      {
-         massa, saker, satat 
-      }
-      {
-      A lot of interesting things about your old job
+      % =======================================================================
+      {Job title 2}                                      % Set your job title
+      {Old Company Inc.}                                 % Company name
+      {2010 -- 2014}                                     % Between what years 
+      {dec to sep}{                                      % Specify month
+      % =======================================================================
+      % What was the main tasks of the job. 
+      % Use comma (,) to separate the tasks.
+      % =======================================================================
+         Being awesome,
+         Chilling,
+         The candy guy
+      }{
+      % =======================================================================
+      % Description of your job 
+      % =======================================================================
+      Doing things for the boss man. Real good.
    }
 
 
 
-   % Your education 
+% =============================================================================
+% Your Education
+% =============================================================================
    \section{Education}
-
-
-   \ednode{University of Nowhere}{2004 -- 2008}{%
-      I attended the University of Nowhere from 2004 to 2008.
+   \ednode
+      % =======================================================================
+      {University of Nowhere}                        % School name
+      {2004 -- 2008}{                                % Dates, from when to when
+      % =======================================================================
+      % Description of the school and courses 
+      % =======================================================================
+      I attended the University of Nowhere studying noda.
    }
 
 
-   % Other courses 
+% =============================================================================
+% Other training programs & courses
+% =============================================================================
    \section{Other training programs \& courses}
    \coursenode
-      {Company}
-      {Date}
-      {Course}{%
-         Description of the school and the purpes of the courses.
-      }
+      % =======================================================================
+      {Company}                                          % Related company
+      {2015}                                             % Year you attended
+      {Course 2}{                                        % Course name
+      % =======================================================================
+      % Description of the school and courses 
+      % =======================================================================
+      Description of the course(s).
+   }
 
    \coursenode
-      {Company}
-      {Date}
-      {Course}{%
-         Description of the course.
-      }
+      % =======================================================================
+      {Company}                                          % Related company
+      {2015}                                             % Year you attended
+      {Course 1}{                                        % Course name
+      % =======================================================================
+      % Description of the school and courses 
+      % =======================================================================
+      Description of the course(s).
+   }
 
+% =============================================================================
+% Skills
+% =============================================================================
    \section{Skills}
-      \skills{Operating Systems}{
-         GNU\/Linux, 
-         Windows
+      \skills{Skill topic 1}{
+      %  Name          Skill level 1-5
+         GNU/Linux     \skillLevel{4}, 
+         Windows       \skillLevel{1}
          }
       \skills{Programming}{
-         Bash, 
-         Java
+         Bash          \skillLevel{4}, 
+         Java          \skillLevel{4}
          }
 
+% =============================================================================
+% Skills - What languages do you speak and write, separate with a comma.
+% =============================================================================
    \section{Language}
       \spokenLanguage{
          Swedish,
          English
       }
 
+% =============================================================================
+% Skills - Do you have a drivers license, separate with a comma.
+% =============================================================================
    \section{Driving license}
       \license{
-         A -- Motor cykle,
+         A -- Motor cycle,
          B -- Car 
       }
 
-   \section{Skills}
+   \section{Social}
+      Some further information about me on the social and public side of things.
+
+      \sosialLink{LinkedIn}{https://se.linkedin.com/pub/staffan-björnson/73/a46/817}
+      
+      \sosialLink{GitHub}{https://github.com/StaffanOB/sobCV/blob/master/sobCV.cls}
 
 \end{document}
