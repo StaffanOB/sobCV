@@ -1,21 +1,36 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{sobCV}[2015/09/08 Staffan björnsons CV class]
-\LoadClass{article}
+\LoadClass[11pt]{article}
 
 
-\usepackage[hmargin=1.25cm, vmargin=0.75cm]{geometry} % Specifies horizontal and vertical page margins
-\usepackage{hyperref} % Required for links
+%\RequirePackage[hmargin=1.25cm, vmargin=0.75cm]{geometry} % Specifies horizontal and vertical page margins
+\RequirePackage[paperwidth=595pt,paperheight=841pt,top=2cm,right=2cm,bottom=2cm,left=2cm]{geometry}
+\RequirePackage{hyperref} % Required for links
+\RequirePackage{tabularx}
+\RequirePackage{multirow}
+\RequirePackage{graphicx}
+\RequirePackage{pgffor}
+\RequirePackage{amssymb}
+\RequirePackage[utf8]{inputenc}
+
+\usepackage{ragged2e}
 
 % :=-------------------------------------------------------------------------=:
 % : COLORS
 % :=-------------------------------------------------------------------------=:
 
-%\RequirePackage[usenames,dvipsnames]{xcolor}
-\usepackage[usenames,dvipsnames]{xcolor} % Required for custom colors
+\RequirePackage[scaled=1]{carlito}
+\renewcommand*{\familydefault}{\sfdefault}
 
-\definecolor{highlight}{HTML}{3399FF}
+% :=-------------------------------------------------------------------------=:
+% : COLORS
+% :=-------------------------------------------------------------------------=:
+
+\RequirePackage[usenames,dvipsnames]{xcolor} % Required for custom colors
+
+\definecolor{highlight}{HTML}{0066cc}
 \definecolor{descrete}{HTML}{808080}
-\definecolor{darkGray}{rgb}{1,0.5,0}
+\definecolor{darkGray}{rgb}{0.52, 0.52, 0.51}
 
 
 
@@ -26,36 +41,125 @@
 \definecolor{date}{HTML}{666666} % The color used for the Last Updated text at the top right
 
 % :=-------------------------------------------------------------------------=:
-% : NAME 
+% : TITLE NAME 
 % :=-------------------------------------------------------------------------=:
 \newcommand{\name}[2]{
-  \centerline{\Huge{#1 \color{highlight}#2}}
+  \centerline{\fontsize{40}{60}\selectfont{#1 \color{highlight}#2}}
+  \vspace{.5em}
 }
 
-
+% :=-------------------------------------------------------------------------=:
+% : CONTACT INFORMATION
+% :=-------------------------------------------------------------------------=:
 \newcommand{\contact}[5]{
     #1 {\large\textperiodcentered} #2 {\large\textperiodcentered} #3
     {\Large} #4  {\Large} #5
 }
 
 \newcommand{\longcontact}[6]{
-  \begin{tabular}{ l X }
-    \textbf{#1} & #2 \\
-    #3 & #4 \\
-    #5 & \href{mailto:#6}{#6} \\
-  \end{tabular}
+  {\raggedright
+    \vspace{3pt}\noindent
+    \begin{tabular}{
+           p{\dimexpr.75\linewidth-2\tabcolsep-1.3333\arrayrulewidth}  % column 1
+          r p{\dimexpr.20\linewidth-2\tabcolsep-1.3333\arrayrulewidth}  % column 2
+        }
+            \textbf{#1} & Date:  #4\\
+            #2 & Phone: #5\\
+            #3 & E-Mail #6\\
+
+
+    \end{tabular}
+  }
 }
+
+
+% :=-------------------------------------------------------------------------=:
+% : LIFE QUORE
+% :=-------------------------------------------------------------------------=:
+
+\newcommand{\userquote}[2]{%
+   \vspace{1em}
+   \quote{
+      \begin{center}
+        {\Large One of my fuiding principles are:\\}
+        \textit{{\Large "#1"}}
+      \end{center}
+  }
+  \vspace{1em}
+}
+
+% :=-------------------------------------------------------------------------=:
+% : EXPERIENCE NODE
+% :=-------------------------------------------------------------------------=:
+
+\newcommand{\experiencenode}[5]{
+  \vspace{0pt} \noindent
+    \begin{tabular}{
+      p{\dimexpr.15\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 1
+      p{\dimexpr.30\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 2
+      p{\dimexpr.60\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 3
+      }
+      {{#3}
+
+      \textit{\color{darkGray}#4}} &  
+      {\raggedright\textbf{#1}
+
+      \textit{\color{darkGray}#2}} & 
+      {\raggedright#5} \\
+    \end{tabular}
+  \vspace{0pt}
+}
+
+
+
+% :=-------------------------------------------------------------------------=:
+% : EDUCATION NODE
+% :=-------------------------------------------------------------------------=:
+
+\newcommand{\ednode}[3]{
+  \vspace{3pt} \noindent
+  \begin{tabular}{p{64pt}p{389pt}}
+    \parbox{64pt}{\centering#2} & \parbox{389pt}{\raggedright #1
+
+    \textit{#3}} \\
+  \end{tabular}
+  \vspace{2pt}
+}
+
+% :=-------------------------------------------------------------------------=:
+% : COURSE NODE
+% :=-------------------------------------------------------------------------=:
+
+\newcommand{\coursenode}[3]{
+  \vspace{0pt} \noindent
+  \begin{tabular}{p{64pt}p{389pt}}
+    \parbox{64pt}{\centering#2} & \parbox{389pt}{\raggedright #1
+
+    \textit{#3}} \\
+  \end{tabular}
+  \vspace{2pt}
+}
+
+
+
+\newcommand{\loopEx}[1]{
+  \vspace{1em} \noindent
+  \foreach \n in {#1}{{\color{highlight}$\bigstar$} \n.\par} 
+  \vspace{1em}
+}
+
 
 % Modifying the section headers
 \RequirePackage{titlesec}
 \RequirePackage{abstract}
-\usepackage{indentfirst}
-\usepackage{changepage,lipsum,titlesec}
+\RequirePackage{indentfirst}
+\RequirePackage{changepage,lipsum,titlesec}
 
 \titleformat{\section}          % Customise the \section command 
-   {\Large\raggedright\bf}      % Make the \section headers large (\Large),
+   {\color{highlight}\Large\raggedright\bf}      % Make the \section headers large (\Large),
    {}{0em}                      % Can be used to give a prefix to all sections, like 'Section ...'
    {}                           % Can be used to insert code before the heading
+
    
 
 
@@ -66,12 +170,6 @@
    {}{0em}
    {}
 
-
-
-
-\newcommand{\userquote}[2]{%
-   \quote{\Large\it\centering#1\\--#2}
-}
 
 \newcommand{\datedsection}[4]{%
   \section[#1]{#1 -- \small{\color{descrete}#2} \hfill #3}%
