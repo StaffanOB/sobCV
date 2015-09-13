@@ -19,8 +19,8 @@
 % : COLORS
 % :=-------------------------------------------------------------------------=:
 
-\RequirePackage[scaled=1]{carlito}
-\renewcommand*{\familydefault}{\sfdefault}
+%\RequirePackage[scaled=1]{carlito}
+%\renewcommand*{\familydefault}{\sfdefault}
 
 % :=-------------------------------------------------------------------------=:
 % : COLORS
@@ -44,7 +44,8 @@
 % : TITLE NAME 
 % :=-------------------------------------------------------------------------=:
 \newcommand{\name}[2]{
-  \centerline{\fontsize{40}{60}\selectfont{#1 \color{highlight}#2}}
+  %\centerline{\fontsize{40}{60}\selectfont{#1 \color{highlight}#2}}
+  \centerline{\Huge{#1 \color{highlight}#2}}
   \vspace{.5em}
 }
 
@@ -92,20 +93,22 @@
 % : EXPERIENCE NODE
 % :=-------------------------------------------------------------------------=:
 
-\newcommand{\experiencenode}[5]{
+\newcommand{\experiencenode}[6]{
   \vspace{0pt} \noindent
     \begin{tabular}{
-      p{\dimexpr.15\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 1
-      p{\dimexpr.30\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 2
-      p{\dimexpr.60\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 3
+      p{\dimexpr.20\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 1
+      p{\dimexpr.80\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 2
       }
       {{#3}
 
       \textit{\color{darkGray}#4}} &  
       {\raggedright\textbf{#1}
 
-      \textit{\color{darkGray}#2}} & 
-      {\raggedright#5} \\
+      \textit{\color{darkGray}#2}} 
+
+      {\raggedright#6}
+
+      \exList{#5} \\
     \end{tabular}
   \vspace{0pt}
 }
@@ -118,8 +121,11 @@
 
 \newcommand{\ednode}[3]{
   \vspace{3pt} \noindent
-  \begin{tabular}{p{64pt}p{389pt}}
-    \parbox{64pt}{\centering#2} & \parbox{389pt}{\raggedright #1
+  \begin{tabular}{
+    p{\dimexpr.20\linewidth-2\tabcolsep-1.3333\arrayrulewidth}
+    p{\dimexpr.80\linewidth-2\tabcolsep-1.3333\arrayrulewidth}
+    }
+    {\centering#2} & {\raggedright\textbf{#1}1
 
     \textit{#3}} \\
   \end{tabular}
@@ -130,23 +136,68 @@
 % : COURSE NODE
 % :=-------------------------------------------------------------------------=:
 
-\newcommand{\coursenode}[3]{
+\newcommand{\coursenode}[4]{
   \vspace{0pt} \noindent
-  \begin{tabular}{p{64pt}p{389pt}}
-    \parbox{64pt}{\centering#2} & \parbox{389pt}{\raggedright #1
+  \begin{tabular}{
+    p{\dimexpr.20\linewidth-2\tabcolsep-1.3333\arrayrulewidth}
+    p{\dimexpr.80\linewidth-2\tabcolsep-1.3333\arrayrulewidth}
+    }
+    {#1 
+     
+    \textit{\color{darkGray}#2}} & \textbf{#3}
 
-    \textit{#3}} \\
+
+    \textit{#4} \\
   \end{tabular}
   \vspace{2pt}
 }
 
 
+\newcommand{\skills}[2]{
+  \vspace{0pt} \noindent
+  \begin{tabular}{
+    p{\dimexpr.30\linewidth-2\tabcolsep-1.3333\arrayrulewidth}
+    p{\dimexpr.70\linewidth-2\tabcolsep-1.3333\arrayrulewidth}
+    }
+    #1  & #2 \\
+  \end{tabular}
+  \vspace{2pt}
+}
 
-\newcommand{\loopEx}[1]{
+\newcommand{\exList}[1]{
   \vspace{1em} \noindent
-  \foreach \n in {#1}{{\color{highlight}$\bigstar$} \n.\par} 
+  \foreach \n in {#1}{{
+    \color{highlight}$\bigstar$} \n\par
+  } 
   \vspace{1em}
 }
+
+\newcommand{\spokenLanguage}[1]{
+  \hfill\begin{minipage}{
+    \dimexpr\textwidth-3cm
+  }
+  \foreach \n in {#1}{{
+    \indent\color{highlight}$\bigstar$} \n\par
+  } 
+  \xdef\tpd{\the\prevdepth}
+\end{minipage}
+
+
+}
+
+\newcommand{\license}[1]{
+  \hfill\begin{minipage}{
+    \dimexpr\textwidth-3cm
+  }
+  \foreach \n in {#1}{{
+    \indent\color{highlight}$\bigstar$} \n\par
+  } 
+  \xdef\tpd{\the\prevdepth}
+\end{minipage}
+
+
+}
+
 
 
 % Modifying the section headers
