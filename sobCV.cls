@@ -92,7 +92,8 @@
       \centerline{\textit{\color{darkGray}#4}}} &  
       {\raggedright\textbf{#1}
 
-      \textit{\color{darkGray}#2}} 
+      \textit{\color{darkGray}#2}
+      \vspace{.4em}} 
 
       {\raggedright#6}
 
@@ -103,7 +104,7 @@
 
 \newcommand{\exList}[1]{
   \vspace{1em} \noindent
-  \foreach \n in {#1}{{\color{highlight}$\bigstar$} \n\par} 
+  \foreach \n in {#1}{{\color{highlight}$\bullet$} \n\par} 
   \vspace{1em}
 }
 
