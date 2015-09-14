@@ -3,7 +3,8 @@
 \LoadClass[11pt]{article}
 
 \RequirePackage[paperwidth=595pt,paperheight=841pt,top=2cm,right=2cm,bottom=2cm,left=2cm]{geometry}
-\RequirePackage{hyperref}                         % Required for links
+%\RequirePackage{hyperref}                         % Required for links
+\RequirePackage[colorlinks = true]{hyperref}
 \RequirePackage{tabularx}
 \RequirePackage{pgffor}
 \RequirePackage{amssymb}
@@ -12,6 +13,10 @@
 \RequirePackage{forloop}
 \RequirePackage[usenames,dvipsnames]{xcolor}      % Required for custom colors
 \usepackage{graphicx}                             % Used for images
+
+\usepackage{array}
+\usepackage{multirow}
+
 
 % :=-------------------------------------------------------------------------=:
 % : FONT
@@ -55,8 +60,6 @@
             \textbf{#1} & Date:  #4\\
             #2 & Phone: #5\\
             #3 & E-Mail: #6\\
-
-
     \end{tabular}
   }
 }
@@ -70,7 +73,7 @@
    \vspace{1em}
    \quote{
       \begin{center}
-        {\color{darkGray}\textit{One of my fuiding principles are:}\\}
+        {\color{darkGray}\textit{One of my life motos are:}\\}
         \color{darkGray}\textit{{\Large "#1"}}
       \end{center}
   }
@@ -211,9 +214,19 @@
    {}{0em}                      % Can be used to give a prefix to all sections, like 'Section ...'
    {}                           % Can be used to insert code before the heading
 
+\titleformat{\subsection}          % Customise the \section command 
+   {\color{highlight}\Large\raggedright\bf}      % Make the \section headers large (\Large),
+   {}{0em}                      % Can be used to give a prefix to all sections, like 'Section ...'
+   {}   
 
-
+% :=-------------------------------------------------------------------------=:
+% : LINKS
+% :=-------------------------------------------------------------------------=:
+\newcommand{\changeurlcolor}[1]{\hypersetup{urlcolor=#1}}       
 \newcommand{\sosialLink}[3]{
   \vspace{0pt}
-  \textbf{#1: } \textit{#2} \\
+  \begin{tabular}{rl}
+    \multirow{2}{*}{\includegraphics[width=26pt]{icons/#3}} & \textbf{#1}\tabularnewline
+    & \small{\changeurlcolor{highlight}\href{#2}{#2}}\tabularnewline
+  \end{tabular}
 }
