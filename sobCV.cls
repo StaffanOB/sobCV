@@ -13,7 +13,8 @@
 \RequirePackage{forloop}
 \RequirePackage[usenames,dvipsnames]{xcolor}      % Required for custom colors
 \usepackage{graphicx}                             % Used for images
-
+\usepackage{hyperxmp}
+\usepackage{lipsum}
 \usepackage{array}
 \usepackage{multirow}
 
