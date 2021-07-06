@@ -1,6 +1,8 @@
 # sobCV Class
 
    sobCV is a document class for LaTex to help with CV creation. It's designed to be simple and easy for the reader to quickly get an overview of the content. It should also be easy to edit and add content with as much pre configured as possible.
+   
+   ![CV Demo](sobCV.png)
 
 ## Installation
 
